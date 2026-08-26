@@ -1,17 +1,19 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
-
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getHome(): string {
+    return 'Halaman Home NestJS';
   }
 
   @Get('hello')
-  getHelloUser(): string {
+  getHello(): string {
     return 'Hello from NestJS!';
+  }
+
+  @Get('about')
+  getAbout(): string {
+    return 'Saya sedang belajar NestJS';
   }
 }
