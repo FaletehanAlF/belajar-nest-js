@@ -34,4 +34,9 @@ export class AppController {
   getMessage(): string {
     return this.appService.getMessage();
   }
+
+  @Get('info')
+getInfo(): string {
+  return this.appService.getInfo();
+}
 }

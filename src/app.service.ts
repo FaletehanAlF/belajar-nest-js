@@ -9,4 +9,8 @@ export class AppService {
   getMessage(): string {
     return 'Pesan ini berasal dari AppService';
   }
+
+  getInfo(): string {
+  return 'Service berhasil digunakan melalui Dependency Injection';
+}
 }
