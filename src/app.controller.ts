@@ -1,7 +1,10 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
+import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
+  constructor(private readonly appService: AppService) {}
+
   @Get()
   getHome(): string {
     return 'Halaman Home NestJS';
@@ -27,4 +30,8 @@ export class AppController {
     return `Mencari user: ${name}`;
   }
 
+  @Get('message')
+  getMessage(): string {
+    return this.appService.getMessage();
+  }
 }
